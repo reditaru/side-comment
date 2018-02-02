@@ -28,7 +28,7 @@
                     console.log(payload);
                     var comment =   {
                         "id": id++,
-                        "body": payload.body,
+                        "body": decodeURI(payload.body),
                         "postId": 1,
                         "section": payload.section,
                         "userId": payload.user.id,

@@ -5,6 +5,10 @@ function SideComment(el,currentUser,postId,comments){
     this.comments = comments;
     this.postId = postId;
     commentStats = {};
+    if(window.innerWidth<768){
+        console.log('The viewport width did not satisfy the min width to get best experience!');
+        return;
+    }
     $(el).css("width","80%").addClass("side-comment-close");
     $(el).children("p").each(function(index,element){
         $(element).css("padding-right","30px").css("position","relative").attr("id",index);
@@ -147,7 +151,7 @@ function SideComment(el,currentUser,postId,comments){
                     parent:parent? parent:"null",
                     postId:postId,
                     section: $($ul).parent().parent().parent().attr("id"),
-                    body:$($editArea).find(".edit-comment").val()
+                    body:encodeURI($($editArea).find(".edit-comment").val().replace(/<.*?>/g,""))
                 }
                 $(_this).trigger("postComment",payload);
                 $($editArea).remove();
