@@ -1,0 +1,11 @@
+{
+  "name": "side-comment",
+  "version": "1.0.0",
+  "description": "side comment inspired by medium.com based on markdown",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "reditaru",
+  "license": "ISC"
+}
